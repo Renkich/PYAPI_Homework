@@ -63,6 +63,39 @@ print(get_shop_list_by_dishes(['Омлет', 'Утка по-пекински'], 
 
 # Задание 3
 
+name_file1 = '1.txt'
+name_file2 = '2.txt'
+
+with open('1.txt', 'r', encoding = 'utf-8') as f1:
+    file1 = f1.read()
+with open('1.txt', 'r', encoding = 'utf-8') as f1:
+    l1 = len(f1.readlines())    
+
+with open('2.txt', 'r', encoding = 'utf-8') as f2:
+    file2 = f2.read()
+with open('2.txt', 'r', encoding = 'utf-8') as f2:
+    l2 = len(f2.readlines())    
+    
+with open('res.txt', 'a', encoding = 'utf-8') as res:
+    if l1 < l2:
+        res.write(name_file1 + '\n')
+        res.write(str(l1) + '\n')
+        res.write(file1 + '\n')
+        res.write(name_file2 + '\n')
+        res.write(str(l2) + '\n')
+        res.write(file2 + '\n')
+    else:
+        res.write(name_file2 + '\n')
+        res.write(str(l2) + '\n')
+        res.write(file2 + '\n')
+        res.write(name_file1 + '\n')
+        res.write(str(l1) + '\n')
+        res.write(file1 + '\n')
+
+
+
+
+
 
 
 
@@ -124,4 +157,4 @@ print(get_shop_list_by_dishes(['Омлет', 'Утка по-пекински'], 
                 #ingr_pers[ingrid['ingredient_name']] = meas
         #else:
             #print(f'\n"Такого блюда нет в списке!"\n')
-    #return ingr_pers      
+    #return ingr_pers
